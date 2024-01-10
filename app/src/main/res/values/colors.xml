@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorText">#484848</color>
+    <color name="colorStrokeEditText">#B3B3B3</color>
+    <color name="colorTextHint">#edede0</color>
+    <color name="colorTextForgot">#9C9C9C</color>
+    <color name="colorPrimary">#00957B</color>
+    <color name="colorLogin">#BA935C</color>
+    <color name="colorNavIcon">#BA935C</color>
+    <color name="colorBackGroundIcSearch">#FFD279</color>
+</resources>
