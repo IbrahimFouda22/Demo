@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import com.example.data.remote.APIService
 import com.example.demo.util.Constant
 import com.example.demo.util.DemoInterceptor
+import com.example.demo.util.UnsafeOkHttpClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,8 +36,7 @@ object NetworkModule {
     fun provideOkHttp(
         interceptor: DemoInterceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
-    ) = OkHttpClient.Builder().addInterceptor(interceptor).addInterceptor(httpLoggingInterceptor)
-        .connectTimeout(20, TimeUnit.SECONDS).readTimeout(20, TimeUnit.SECONDS).build()
+    ) = UnsafeOkHttpClient.unsafeOkHttpClient
 
     @Provides
     @Singleton
