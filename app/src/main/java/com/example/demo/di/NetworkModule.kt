@@ -52,6 +52,7 @@ object NetworkModule {
         Retrofit.Builder().baseUrl(Constant.BASE_URL).client(httpClient)
             .addConverterFactory(GsonConverterFactory.create()).build()
 
+
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): APIService = retrofit.create(APIService::class.java)
