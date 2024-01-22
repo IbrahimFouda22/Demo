@@ -31,12 +31,20 @@ object NetworkModule {
         DemoInterceptor(sharedPreferences)
 
 
+//    @Provides
+//    @Singleton
+//    fun provideOkHttp(
+//        interceptor: DemoInterceptor,
+//        httpLoggingInterceptor: HttpLoggingInterceptor
+//    ) = UnsafeOkHttpClient.unsafeOkHttpClient
+
     @Provides
     @Singleton
     fun provideOkHttp(
         interceptor: DemoInterceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor
-    ) = UnsafeOkHttpClient.unsafeOkHttpClient
+    ) = OkHttpClient.Builder().addInterceptor(interceptor).readTimeout(20, TimeUnit.SECONDS)
+        .connectTimeout(20, TimeUnit.SECONDS).addInterceptor(httpLoggingInterceptor).build()
 
     @Provides
     @Singleton
